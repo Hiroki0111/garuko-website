@@ -1,0 +1,541 @@
+
+/* --------------------------------
+    リセット・共通設定
+-------------------------------- */
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-image 1s ease-in-out;
+  margin: 0;
+  padding: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif; /* フォントファミリーを全体に適用 */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------
+    トップバナー
+-------------------------------- */
+.hero {
+  position: relative;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.banner {
+  width: 100%;
+  display: block;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 0 10px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.mobile-title {
+  display: none; /* PCでは非表示 */
+}
+
+/* --------------------------------
+    ナビゲーション
+-------------------------------- */
+nav.top-nav {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  text-align: center; /* PC表示でメニューを中央寄せ */
+  border-bottom: 1px solid #ccc;
+}
+
+.top-nav a {
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #b30000;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.top-nav a:hover {
+  color: #fff;
+  background-color: #b30000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+/* --------------------------------
+    ハンバーガーメニュー (スマホ用)
+-------------------------------- */
+.menu-toggle {
+  display: none; /* PCでは非表示 */
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 1001;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  list-style: none;
+  display: inline-block; /* PCでは横並び */
+}
+
+/* --------------------------------
+    背景＆セクション共通
+-------------------------------- */
+.background-area {
+  position: relative;
+  padding-top: 2rem;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+
+.background-area::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.section, .horizontal-section {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #b30000;
+  margin-top: 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.bubble-heading {
+  background: #b30000;
+  color: white;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  font-size: 1.8rem;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.2; /* 行の高さを調整します。値はお好みで調整してください */
+}
+
+/* --------------------------------
+    カード共通スタイル
+-------------------------------- */
+.card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------
+    楽曲カード
+-------------------------------- */
+.music-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.music-container .card {
+  flex: 1 1 30%;
+  max-width: 300px;
+}
+
+.music-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.music-icons img {
+  width: 40px;
+  transition: transform 0.2s ease;
+}
+
+.music-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* --------------------------------
+   スタンプ・グッズ セクション
+-------------------------------- */
+#goods {
+  margin-top: 3rem;
+  background-color: rgba(255, 204, 204, 0.3);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+}
+
+.stamp-goods-wrapper {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+#goods .card {
+  flex: 1 1 320px;
+  max-width: 400px;
+}
+
+#goods .card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#goods .card img {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* --------------------------------
+    ニュース
+-------------------------------- */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+.news-list li {
+  margin-bottom: 0.5rem;
+}
+
+.hidden-news {
+  display: none;
+}
+
+#toggle-news {
+  background-color: #ff4b5c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#toggle-news:hover {
+  background-color: #e04352;
+  transform: scale(1.05);
+}
+
+/* --------------------------------
+    Garu子とは (About)
+-------------------------------- */
+#about {
+  background-color: white;
+  border: 2px solid #e33;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* --------------------------------
+    SNS
+-------------------------------- */
+.social-links {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.social-links img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+/* --------------------------------
+    フッター
+-------------------------------- */
+footer {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #b30000;
+}
+
+footer .section {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+/* --------------------------------
+    その他・アニメーションなど
+-------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-br {
+  display: none;
+}
+
+
+/* ==========================================================================
+   スマートフォン向けスタイル (画面幅 768px 以下に適用)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /*
+   * タイトル & フォントサイズ
+   */
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  h2, .bubble-heading {
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .banner {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  /*
+   * ナビゲーション & ハンバーガー
+   */
+  .top-nav {
+    padding: 0;
+  }
+  
+  .top-nav .menu li a {
+    display: none; /* PC用のメニュー項目は非表示に */
+  }
+
+  .menu-toggle {
+    display: block; /* ハンバーガーアイコンを表示 */
+  }
+
+  .menu {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .top-nav.open .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu li {
+    display: block; /* メニュー項目を縦並びに */
+    text-align: right;
+    padding: 5px 20px;
+  }
+
+  .menu li a {
+    display: block; /* リンク領域を広げる */
+    text-decoration: none;
+    color: #c00;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /*
+   * セクション & カード
+   */
+  .section, .horizontal-section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem auto;
+  }
+
+  /* 楽曲カード (縦1列) */
+  .music-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* スタンプ＆グッズのカード (横2列) */
+  #goods {
+    padding: 1.5rem 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .stamp-goods-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-container {
+    gap: 1rem; /* カード間の隙間を調整 */
+  }
+  
+  #goods .card {
+    flex-basis: calc(50% - 0.5rem); 
+    max-width: calc(50% - 0.5rem);
+  }
+
+  /*
+   * その他
+   */
+  .mobile-br {
+    display: block; /* スマホで改行させたい箇所で表示 */
+  }
+
+  .music-icons img {
+    width: 35px;
+  }
+}
+/* --------------------------------
+    SNSセクションのタイトルとアイコンの距離調整
+-------------------------------- */
+#sns .bubble-heading {
+  /* 既存の margin-bottom を上書きして、より小さな値に */
+  margin-bottom: 0.5rem; /* 例: 0.5rem (約8px)。お好みで調整してください */
+}
+
+#sns .social-links {
+  /* 既存の margin-top を上書きして、より小さな値に */
+  margin-top: 0.5rem; /* 例: 0.5rem (約8px)。お好みで調整してください */
+}
+@media (min-width: 769px) {
+  #top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* 画面の最前面に表示 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* 必要に応じて */
+    background-color: rgba(255,255,255,0.95); /* 透明度調整も可能 */
+  }
+  /* ナビの下にコンテンツが被らないようにbodyにpaddingを追加 */
+  body {
+    padding-top: 60px; /* ナビの高さ分だけ調整してください */
+  }
+}
+@media (max-width: 768px) {
+#menu {
+  display: none; /* 初期は非表示 */
+  flex-direction: column; /* 縦並びに */
+  background-color: #fff; /* 背景色を白にして見やすく */
+  padding: 10px;
+}
+#menu.show {
+  display: flex;
+}
+#menu a {
+  display: block;
+  padding: 10px;
+  color: #c00; /* 文字色を黒に */
+  text-decoration: none;
+}
+#menu a:hover {
+  background-color: #eee; /* ホバー効果 */
+}}
